@@ -1,0 +1,17 @@
+===============================
+BUILT-IN TYPES:
+===============================
+=> Javascript:
+number
+string
+boolean
+null
+undefined
+onject
+=> TypeScript:
+any
+unknown
+never
+enum
+yuple
+
