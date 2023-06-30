@@ -84,3 +84,25 @@ let employee: {
 // employee.age = 21 //not allowed
 // employee.id = 0 //will give error
 employee.name = "Gautam";
+
+// =================================================================
+// TYPE ALIASES
+// =================================================================
+
+// -> DRY principle - Dont Repeat Yourself
+
+type Employees = {
+    readonly id: number;
+    name: string;
+    salary?: number;
+    retire: (date: Date) => void;
+} //we can reuse this as a type
+
+let employees: Employees = 
+  {
+    id: 1,
+    name: "Himal",
+    retire: (date: Date) => {
+      console.log(date);
+    },
+  };
