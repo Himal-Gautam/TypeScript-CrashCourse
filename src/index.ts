@@ -61,4 +61,26 @@ function calculateTax(income: number, taxYear = 2022): number {
   return income * 1.3;
 } //explicitly return type number
 
-calculateTax(10_000, 2022)
+calculateTax(10_000, 2022);
+
+// =================================================================
+// OBJECTS
+// =================================================================
+
+let employee: {
+  readonly id: number; //cant be modified
+  name: string;
+  salary?: number; //optional
+  retire: (date: Date) => void;
+} =
+  //{ id: 1 } // will give error
+  {
+    id: 1,
+    name: "Himal",
+    retire: (date: Date) => {
+      console.log(date);
+    },
+  };
+// employee.age = 21 //not allowed
+// employee.id = 0 //will give error
+employee.name = "Gautam";
