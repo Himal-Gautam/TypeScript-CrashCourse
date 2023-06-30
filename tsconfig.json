@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es6", // Specify the ECMAScript target version
+    "module": "commonjs", // Specify the module system
+    "rootDir": "./src", // Root directory for TypeScript source files
+    "outDir": "./dist", // Output directory for compiled JavaScript files
+    "strict": true, // Enable strict type-checking
+    "removeComments": true, // Remove comments from compiled JavaScript files
+    "esModuleInterop": true, // Enable compatibility with modules that use default exports
+    "skipLibCheck": true, // Skip type checking of declaration files from imported libraries
+    "noEmitOnError": true, // Do not emit JavaScript files if there are any compilation errors
+    "forceConsistentCasingInFileNames": true // Enforce consistent casing in file names (helpful for cross-platform development)
+  },
+  "include": ["src/**/*.ts"], // Include TypeScript source files in the compilation process
+  "exclude": ["node_modules"] // Exclude the "node_modules" directory from the compilation
+}
