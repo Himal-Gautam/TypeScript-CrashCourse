@@ -11,8 +11,11 @@
     "noEmitOnError": true, // Do not emit JavaScript files if there are any compilation errors
     "sourceMap": true, // Enable source
     "forceConsistentCasingInFileNames": true, // Enforce consistent casing in file names (helpful for cross-platform development)
-    "noImplicitAny": true //Enables implicit any
-},
+    "noImplicitAny": true, // Raise an error when TypeScript cannot infer a more specific type
+    "noUnusedParameters": true, // Report unused function parameters as errors
+    "noImplicitReturns": true, // Report missing return statements as errors
+    "noUnusedLocals": true // Report unused local variables as errors
+  },
   "include": ["src/**/*.ts"], // Include TypeScript source files in the compilation process
   "exclude": ["node_modules"] // Exclude the "node_modules" directory from the compilation
 }
