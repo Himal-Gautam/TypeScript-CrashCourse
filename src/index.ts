@@ -19,3 +19,10 @@
 //   console.log(document);
 // }
 
+// =================================================================
+// ARRAYS
+// =================================================================
+
+// let numbers = [1, 2, '3']; // implicitly have type any[]
+// let numbers : any[] = [1, 2, '3']; // explicitly have type any
+let numbers : number[] = [1, 2, 3]; // implicitly have type any 
