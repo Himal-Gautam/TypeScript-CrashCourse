@@ -32,3 +32,17 @@ let numbers : number[] = [1, 2, 3]; // implicitly have type any
 // =================================================================
 
 let user: [number, string] = [1, 'Himal'];
+
+// =================================================================
+// ENUMS
+// =================================================================
+
+// enum Size {Small, Medium, Large} //{Small = 0, Medium = 1, Large = 2}
+enum Size {Small = 1 , Medium, Large} //{Small = 1, Medium = 2, Large = 3}
+// enum Size {Small = 's' , Medium = 'm', Large = 'l'} //declare for all sizes
+
+let mySize: Size = Size.Medium;
+console.log(mySize); //2
+
+
+
