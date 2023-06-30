@@ -9,6 +9,7 @@
     "esModuleInterop": true, // Enable compatibility with modules that use default exports
     "skipLibCheck": true, // Skip type checking of declaration files from imported libraries
     "noEmitOnError": true, // Do not emit JavaScript files if there are any compilation errors
+    "sourceMap": true, // Enable source
     "forceConsistentCasingInFileNames": true // Enforce consistent casing in file names (helpful for cross-platform development)
   },
   "include": ["src/**/*.ts"], // Include TypeScript source files in the compilation process
