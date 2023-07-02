@@ -122,3 +122,23 @@ function kgToLbs(weight: number | string): number {
 kgToLbs(10)
 kgToLbs('10kg')
 
+// =================================================================
+// INTERSECTION TYPES
+// =================================================================
+
+// example from previous one => weight: number & string
+
+type Draggable = {
+    drag: () => void
+}
+
+type Resizeable = {
+    resize: () => void
+}
+
+type UIWidget = Draggable & Resizeable 
+
+let widget: UIWidget = {
+    drag: () => {},
+    resize: () => {}
+}
