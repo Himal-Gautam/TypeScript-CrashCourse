@@ -142,3 +142,27 @@ let widget: UIWidget = {
     drag: () => {},
     resize: () => {}
 }
+
+// =================================================================
+// LITERAL TYPES
+// =================================================================
+
+// literal (exact, sepcific)
+
+let quantity1: 50
+quantity1 = 50 //correct
+// quantity1: 50 = 51 //incorrect as we have set literal 50
+
+let quantity2: 50 | 100 
+quantity2 = 50 //correct
+quantity2 = 100 //correct
+// quantity2: 51 //incorrect as we have set literal 50 or 100
+
+// perfect way
+type Quantity = 50 | 100
+let quantity3: Quantity
+quantity3 = 50 //correct
+quantity3 = 100 //correct
+// quantity3: 51 //incorrect as we have set literal 50 or 100
+
+type Metric = "cm" | "inch" //example
