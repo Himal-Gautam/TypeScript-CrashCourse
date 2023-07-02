@@ -92,17 +92,33 @@ employee.name = "Gautam";
 // -> DRY principle - Dont Repeat Yourself
 
 type Employees = {
-    readonly id: number;
-    name: string;
-    salary?: number;
-    retire: (date: Date) => void;
-} //we can reuse this as a type
+  readonly id: number;
+  name: string;
+  salary?: number;
+  retire: (date: Date) => void;
+}; //we can reuse this as a type
 
-let employees: Employees = 
-  {
-    id: 1,
-    name: "Himal",
-    retire: (date: Date) => {
-      console.log(date);
-    },
-  };
+let employees: Employees = {
+  id: 1,
+  name: "Himal",
+  retire: (date: Date) => {
+    console.log(date);
+  },
+};
+
+// =================================================================
+// UNION TYPES
+// =================================================================
+
+function kgToLbs(weight: number | string): number {
+    // Narrowing
+    if (typeof weight === "number") {
+        return weight * 2.2;
+    } else {
+        return parseInt(weight) * 2.2;
+    }
+ }
+
+kgToLbs(10)
+kgToLbs('10kg')
+
