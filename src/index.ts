@@ -186,3 +186,53 @@ function greet(name: string | null | undefined) {
 }
 
 greet(null); //valid js but invalid ts
+
+// =================================================================
+// OPTIONAL CHAINING
+// =================================================================
+
+// => For Property we use optional property access operator
+
+type Customer = {
+    // birthday: Date
+    birthday?: Date //we made this property optional
+}
+
+function getCustomer(id: number): Customer | null | undefined{
+    return id === 0 ? null : { birthday: new Date() }
+}
+
+let customer = getCustomer(0);
+// console.log(customer.birthday); //error
+
+// as we have given type as nullable using union we have to handle that
+
+// Method 1
+// if (customer !== null && customer !== undefined)
+//     console.log(customer.birthday); //it works
+
+// Method 2
+// Optional property access operator
+console.log(customer?.birthday);//might give error if bithday property don't exist
+console.log(customer?.birthday?.getFullYear()); //it will work and return undefined
+
+// => For Property we use optional element access operator
+
+// Optional element access operator
+let customers: Customer[] = []
+
+// Method 1
+// if (customers !== null && customers !== undefined)
+//     console.log(customers[0]); //it works
+
+// Method 2
+// Optional property access operator
+console.log(customers?.[0]);//might give error if bithday property don't exist
+
+
+// => For functions we use optional call
+
+let log: any = null
+
+// log('a') //crash as log is null
+ log?.('a') //will work only if log realy refrencing a function else undefined
