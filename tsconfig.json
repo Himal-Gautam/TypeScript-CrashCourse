@@ -14,7 +14,8 @@
     "noImplicitAny": true, // Raise an error when TypeScript cannot infer a more specific type
     "noUnusedParameters": true, // Report unused function parameters as errors
     "noImplicitReturns": true, // Report missing return statements as errors
-    "noUnusedLocals": true // Report unused local variables as errors
+    "noUnusedLocals": true, // Report unused local variables as errors
+    "strictNullChecks": true //strict null checks
   },
   "include": ["src/**/*.ts"], // Include TypeScript source files in the compilation process
   "exclude": ["node_modules"] // Exclude the "node_modules" directory from the compilation

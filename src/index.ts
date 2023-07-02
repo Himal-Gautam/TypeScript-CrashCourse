@@ -111,16 +111,16 @@ let employees: Employees = {
 // =================================================================
 
 function kgToLbs(weight: number | string): number {
-    // Narrowing
-    if (typeof weight === "number") {
-        return weight * 2.2;
-    } else {
-        return parseInt(weight) * 2.2;
-    }
- }
+  // Narrowing
+  if (typeof weight === "number") {
+    return weight * 2.2;
+  } else {
+    return parseInt(weight) * 2.2;
+  }
+}
 
-kgToLbs(10)
-kgToLbs('10kg')
+kgToLbs(10);
+kgToLbs("10kg");
 
 // =================================================================
 // INTERSECTION TYPES
@@ -129,19 +129,19 @@ kgToLbs('10kg')
 // example from previous one => weight: number & string
 
 type Draggable = {
-    drag: () => void
-}
+  drag: () => void;
+};
 
 type Resizeable = {
-    resize: () => void
-}
+  resize: () => void;
+};
 
-type UIWidget = Draggable & Resizeable 
+type UIWidget = Draggable & Resizeable;
 
 let widget: UIWidget = {
-    drag: () => {},
-    resize: () => {}
-}
+  drag: () => {},
+  resize: () => {},
+};
 
 // =================================================================
 // LITERAL TYPES
@@ -149,20 +149,40 @@ let widget: UIWidget = {
 
 // literal (exact, sepcific)
 
-let quantity1: 50
-quantity1 = 50 //correct
+let quantity1: 50;
+quantity1 = 50; //correct
 // quantity1: 50 = 51 //incorrect as we have set literal 50
 
-let quantity2: 50 | 100 
-quantity2 = 50 //correct
-quantity2 = 100 //correct
+let quantity2: 50 | 100;
+quantity2 = 50; //correct
+quantity2 = 100; //correct
 // quantity2: 51 //incorrect as we have set literal 50 or 100
 
 // perfect way
-type Quantity = 50 | 100
-let quantity3: Quantity
-quantity3 = 50 //correct
-quantity3 = 100 //correct
+type Quantity = 50 | 100;
+let quantity3: Quantity;
+quantity3 = 50; //correct
+quantity3 = 100; //correct
 // quantity3: 51 //incorrect as we have set literal 50 or 100
 
-type Metric = "cm" | "inch" //example
+type Metric = "cm" | "inch"; //example
+
+// =================================================================
+// NULLABLE TYPES
+// =================================================================
+
+// function greet(name: string) {
+//     console.log(name.toUpperCase());
+// }
+
+// greet(null) //valid js but invalid ts
+
+// Method 1: can be made valid by disabling strict null checks in config.ts
+// Method 2:
+
+function greet(name: string | null | undefined) {
+  if (name) console.log(name.toUpperCase());
+  else console.log("Hola !");
+}
+
+greet(null); //valid js but invalid ts
